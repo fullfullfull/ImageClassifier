@@ -2,7 +2,7 @@ import torch
 import torchvision
 import torchvision.transforms as transforms
 import datetime
-from model import *
+from models import *
 
 
 def test_model(model_file_name='model.pth'):
@@ -15,7 +15,7 @@ def test_model(model_file_name='model.pth'):
     testloader = torch.utils.data.DataLoader(test_set, batch_size=4,
                                              shuffle=False, num_workers=0)
 
-    net = Net()
+    net = resnet18()
 
     net.load_state_dict(torch.load(model_file_name))
 
